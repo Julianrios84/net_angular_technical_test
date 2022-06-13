@@ -1,0 +1,119 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerFormSubmit()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="id_firstname" class="form-label">Firstname</label>
+        <input
+          formControlName="firstname"
+          [class.is-invalid]="firstNameField.touched && firstNameField.invalid"
+          type="text"
+          class="form-control"
+          id="id_firstname"
+        />
+        <div
+          *ngIf="firstNameField.touched && firstNameField.hasError('required')"
+          class="d-block invalid-feedback"
+        >
+          Please provide a Firstname.
+        </div>
+        <div
+          *ngIf="firstNameField.touched && firstNameField.hasError('firstname')"
+          class="d-block invalid-feedback"
+        >
+          Firstname is not valid
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="id_lastname" class="form-label">Lastname</label>
+        <input
+          formControlName="lastname"
+          [class.is-invalid]="lastNameField.touched && lastNameField.invalid"
+          type="text"
+          class="form-control"
+          id="id_lastname"
+        />
+        <div
+          *ngIf="lastNameField.touched && lastNameField.hasError('required')"
+          class="d-block invalid-feedback"
+        >
+          Please provide a Lastname.
+        </div>
+        <div
+          *ngIf="lastNameField.touched && lastNameField.hasError('lastname')"
+          class="d-block invalid-feedback"
+        >
+          Lastname is not valid
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="id_username" class="form-label">Username</label>
+    <input
+      formControlName="username"
+      [class.is-invalid]="userNameField.touched && userNameField.invalid"
+      type="text"
+      class="form-control"
+      id="id_username"
+    />
+    <div
+      *ngIf="userNameField.touched && userNameField.hasError('required')"
+      class="d-block invalid-feedback"
+    >
+      Please provide a Username.
+    </div>
+    <div
+      *ngIf="userNameField.touched && userNameField.hasError('username')"
+      class="d-block invalid-feedback"
+    >
+      Username is not valid
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="id_register_email" class="form-label">Email address</label>
+    <input
+      formControlName="email"
+      [class.is-invalid]="emailField.touched && emailField.invalid"
+      type="email"
+      class="form-control"
+      id="id_register_email"
+    />
+    <div
+      *ngIf="emailField.touched && emailField.hasError('required')"
+      class="d-block invalid-feedback"
+    >
+      Please provide a Email.
+    </div>
+    <div
+      *ngIf="emailField.touched && emailField.hasError('email')"
+      class="d-block invalid-feedback"
+    >
+      Email address is not valid
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="id_register_password" class="form-label">Password</label>
+    <input
+      formControlName="password"
+      [class.is-invalid]="passwordField.touched && passwordField.invalid"
+      type="password"
+      class="form-control"
+      id="id_register_password"
+    />
+    <div
+      *ngIf="passwordField.touched && passwordField.hasError('required')"
+      class="d-block invalid-feedback"
+    >
+      Please provide a Password.
+    </div>
+  </div>
+  <button
+    [disabled]="registerForm.invalid"
+    type="submit"
+    class="mt-3 btn btn-primary w-100"
+  >
+    Submit
+  </button>
+</form>

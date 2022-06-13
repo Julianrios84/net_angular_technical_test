@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-3">
+      <button class="btn btn-primary btn-block" (click)="createOpen()">Create</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered" aria-describedby="categories">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CODE</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">PARENT</th>
+            <th colspan="2" scope="col" class="text-center">ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories$ | async; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              {{ category.code }}
+            </td>
+            <td>{{ category.title }}</td>
+            <td>{{ category.description }}</td>
+            <td>{{ category.idParentCategory }}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm" (click)="updateOpen(category)">edit</button>
+
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger btn-sm" (click)="deleteCategory(category.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

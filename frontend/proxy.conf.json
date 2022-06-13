@@ -1,0 +1,14 @@
+{
+  "/user/*": {
+    "target": "http://localhost:8501",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": false
+  },
+  "/category/*": {
+    "target": "http://localhost:8501",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": false
+  }
+}
