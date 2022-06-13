@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "BWQ+YTD1kWB16k3MQeaW88lEVrJV2Bzq0ekAXDQyi/w=",
+  "Source": "Service.Security.Api",
+  "BasePath": "_content/Service.Security.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

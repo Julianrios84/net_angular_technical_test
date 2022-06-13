@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  technical.test.gateway.api.development:
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8501:80"
+    volumes:
+      # - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      # - /home/ebenalczarespn/docker-persistent/netcore/travelerinsurance/api/development:/root/.microsoft/usersecrets:ro
+      # - data-development:/root/.microsoft/usersecrets:ro
+    
+
+  technical.test.security.api.development:
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8502:80"
+    volumes:
+      # - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      # - /home/ebenalczarespn/docker-persistent/netcore/travelerinsurance/api/production:/root/.microsoft/usersecrets:ro
+      # - data-production:/root/.microsoft/usersecrets:ro
+
+  technical.test.categories.api.development:
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8503:80"
+    volumes:
+      # - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      # - /home/ebenalczarespn/docker-persistent/netcore/travelerinsurance/api/production:/root/.microsoft/usersecrets:ro
+      # - data-production:/root/.microsoft/usersecrets:ro
