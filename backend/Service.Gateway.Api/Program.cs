@@ -9,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 // builder.Services.AddControllers();
-
+IConfiguration configuration = new ConfigurationBuilder()
+                            .AddJsonFile($"ocelot.json")
+                            .Build();
+builder.Services.AddOcelot(configuration);
 
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("C7q3FBCJZq0bIRRH0Dq4lxWuBipEBkHX"));
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
@@ -44,14 +47,11 @@ builder.Services.AddCors(p => p.AddPolicy("CorsRule", builder =>
 }));
 
 
-IConfiguration configuration = new ConfigurationBuilder()
-                            .AddJsonFile($"ocelot.json")
-                            .Build();
-builder.Services.AddOcelot(configuration);
+
 
 var app = builder.Build();
 
-app.UseOcelot();
+app.UseOcelot().Wait();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

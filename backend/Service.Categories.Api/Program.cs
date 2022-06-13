@@ -10,21 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddFluentValidation(option => option.RegisterValidatorsFromAssemblyContaining<Create>());
 
-builder.Services.AddDbContext<CategoryContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("Database")), ServiceLifetime.Transient);
+builder.Services.AddDbContext<CategoryContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
+});
 
 // MediatR
-builder.Services.AddMediatR(typeof(Create.Manager).Assembly);
+builder.Services.AddMediatR(typeof(Create.Run).Assembly);
 // AutoMapper
-builder.Services.AddAutoMapper(typeof(Create.Run));
+builder.Services.AddAutoMapper(typeof(Create.Manager));
 
-// Cors -> Create rules
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("CorsRule", rule =>
-    {
-        rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
-    });
-});
+
 
 // builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,6 +29,12 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.CustomSchemaIds(type => type.ToString());
 });
+
+// Cors -> Create rules
+builder.Services.AddCors(p => p.AddPolicy("CorsRule", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 

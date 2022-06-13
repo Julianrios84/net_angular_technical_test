@@ -3,7 +3,6 @@
     "BaseUrl": "http://localhost:8501"
   },
   "Routes": [
-    // Users -> 8502
     {
       "DownstreamPathTemplate": "/api/user",
       "DownstreamScheme": "http",
@@ -44,7 +43,6 @@
       "UpstreamPathTemplate": "/user/login",
       "UpstreamHttpMethod": [ "POST" ]
     },
-    // Categories
     {
       "DownstreamPathTemplate": "/api/category",
       "DownstreamScheme": "http",

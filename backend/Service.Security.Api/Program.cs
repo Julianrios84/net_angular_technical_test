@@ -53,14 +53,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 
-/* Cors -> Create rules
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("CorsRule", rule =>
-    {
-        rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
-    });
-}); */
 
 // builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

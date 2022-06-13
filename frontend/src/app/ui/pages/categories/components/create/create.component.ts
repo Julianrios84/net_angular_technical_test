@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
       code: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]),
       title: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]),
       description: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]),
-      idParentCategory: new FormControl(null),
+      idParentCategory: new FormControl(0, [Validators.required]),
     })
   }
 

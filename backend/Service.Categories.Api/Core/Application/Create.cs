@@ -47,7 +47,7 @@ namespace Service.Categories.Api.Core.Application
             public async Task<Unit> Handle(Run request, CancellationToken cancellationToken)
             {
 
-                if (request.IdParentCategory != null || request.IdParentCategory.HasValue)
+                if (request.IdParentCategory != null && request.IdParentCategory != 0 && request.IdParentCategory.HasValue)
                 {
                     var exist = await _context.Categories.Where(x => x.Id == request.IdParentCategory).FirstOrDefaultAsync();
                     if (exist == null)
