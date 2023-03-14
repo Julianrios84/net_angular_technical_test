@@ -6,19 +6,31 @@ Para instalar docker en window visita el siguiente link : https://docs.docker.co
 ### Run
 
 Asegurarse de instalar el dotnet-ef 
-*** dotnet tool install --global dotnet-ef --version 7.0.4 ***
+
+```
+dotnet tool install --global dotnet-ef --version 7.0.4
+```
 
 Levantamos el servicio de base de datos
-*** docker compose up --build -d technical.test.mssql ***
+```
+docker compose up --build -d technical.test.mssql
+```
 
 entrar al projecto de backend y ejecutar las migraciones correspondientes
-*** dotnet ef database update --project .\Service.Categories.Api\ ***
-*** dotnet ef database update --project .\Service.Security.Api\ ***
+
+```
+dotnet ef database update --project .\Service.Categories.Api\
+dotnet ef database update --project .\Service.Security.Api\
+```
 
 Ejecutar todos los servicios
-*** docker compose up --build -d *** 
 
+```
+docker compose up --build -d
+```
 
+---
+---
 *** 
 ### Base de datos SQL SERVER 
 Descargamos la imagen
