@@ -8,8 +8,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8502
+          //"Host": "localhost",
+          //"Port": 8502
+          "Host": "technical.test.security.api.development",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/user",
@@ -24,8 +26,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8502
+          //"Host": "localhost",
+          //"Port": 8502
+          "Host": "technical.test.security.api.development",
+          "Port": 80
+
         }
       ],
       "UpstreamPathTemplate": "/user/register",
@@ -36,8 +41,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8502
+          //"Host": "localhost",
+          //"Port": 8502,
+          "Host": "technical.test.security.api.development",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/user/login",
@@ -48,8 +55,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8503
+          //"Host": "localhost",
+          //"Port": 8503
+          "Host": "technical.test.categories.api.development",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/category",
@@ -64,8 +73,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8503
+          //"Host": "localhost",
+          //"Port": 8503,
+          "Host": "technical.test.categories.api.development",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/category/{id}",

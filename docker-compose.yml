@@ -1,45 +1,60 @@
 version: '3.4'
 
 services:
+
+  technical.test.mssql:
+    container_name: technicaltest_mssql_development
+    image: technicaltest/database/mssql:development
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    networks:
+      - technicaltest-net
+    restart: always
+
+
   technical.test.gateway.api.development:
+    container_name: technicaltest_gateway_api_development
     image: technicaltest/gateway/api:development
     build:
-      context: .
-      dockerfile: backend/Service.Gateway.Api/Dockerfile
-    container_name: technicaltest_gateway_api_development
+      context: ./backend/Service.Gateway.Api
+      dockerfile: Dockerfile
     networks:
-      technicaltest-net:
-        aliases: 
-          - technicaltest-net
-    restart: unless-stopped
+      - technicaltest-net
+    restart: always
 
   technical.test.security.api.development:
+    container_name: technicaltest_security_api_development
     image: technicaltest/security/api:development
     build:
-      context: .
-      dockerfile: backend/Service.Security.Api/Dockerfile
-    container_name: technicaltest_security_api_development
+      context: ./backend/Service.Security.Api
+      dockerfile: Dockerfile
     networks:
-      technicaltest-net:
-        aliases: 
-          - technicaltest-net
-    restart: unless-stopped
+      - technicaltest-net
+    restart: always
   
   technical.test.categories.api.development:
+    container_name: technicaltest_categories_api_development
     image: technicaltest/categories/api:development
     build:
-      context: .
-      dockerfile: backend/Service.Categories.Api/Dockerfile
-    container_name: technicaltest_categories_api_development
+      context: ./backend/Service.Categories.Api
+      dockerfile: Dockerfile
     networks:
-      technicaltest-net:
-        aliases: 
-          - technicaltest-net
-    restart: unless-stopped
+      - technicaltest-net
+    restart: always
 
-# volumes:
-  # data-development:
-  # data-production:
+  technical.test.angular.frontend.development:
+    container_name: technicaltest_angular_frontend_development
+    image: technicaltest/angular/frontend:development
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: development
+    networks:
+      - technicaltest-net
+    restart: always
 
 networks:
   technicaltest-net:
+    driver: bridge

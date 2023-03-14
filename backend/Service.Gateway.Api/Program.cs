@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Ocelot.DependencyInjection;
-using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,30 +26,29 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     };
 });
 
-/* builder.Services.AddCors(option =>
-{
-    option.AddPolicy("CorsRule", rule =>
-    {
-        rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
-    });
-}); */
-
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddCors(p => p.AddPolicy("CorsRule", builder =>
+builder.Services.AddCors(opt =>
 {
-    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-}));
-
-
+    opt.AddPolicy("CorsRule", rule =>
+    {
+        rule.WithOrigins()
+            .AllowAnyHeader()
+             .AllowAnyMethod()
+             .AllowCredentials();
+    });
+});
 
 
 var app = builder.Build();
+
+
+// Cors Rule enabled
+app.UseCors("CorsRule");
 
 app.UseOcelot().Wait();
 
@@ -60,8 +59,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Cors Rule enabled
-app.UseCors("CorsRule");
 
 // Authentificaction enabled
 app.UseAuthentication();

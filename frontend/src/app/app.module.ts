@@ -12,6 +12,7 @@ import { RegisterApiService } from './infraestructure/driven-adapter/register-ap
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthInterceptorService } from './infraestructure/driven-adapter/auth-interceptor/auth-interceptor.service';
+import { HttpInterceptorServices } from './infraestructure/driven-adapter/http-interceptor/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,11 @@ import { AuthInterceptorService } from './infraestructure/driven-adapter/auth-in
     NgbModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorServices,
+      multi: true
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

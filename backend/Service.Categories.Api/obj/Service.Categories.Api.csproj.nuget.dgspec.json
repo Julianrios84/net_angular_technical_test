@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repositories\\Personal\\technical-test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj": {}
+    "D:\\Workspace\\Personal\\Projects\\Technical\\net_angular_technical_test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj": {}
   },
   "projects": {
-    "D:\\Repositories\\Personal\\technical-test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj": {
+    "D:\\Workspace\\Personal\\Projects\\Technical\\net_angular_technical_test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositories\\Personal\\technical-test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj",
+        "projectUniqueName": "D:\\Workspace\\Personal\\Projects\\Technical\\net_angular_technical_test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj",
         "projectName": "Service.Categories.Api",
-        "projectPath": "D:\\Repositories\\Personal\\technical-test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj",
-        "packagesPath": "C:\\Users\\Development\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositories\\Personal\\technical-test\\backend\\Service.Categories.Api\\obj\\",
+        "projectPath": "D:\\Workspace\\Personal\\Projects\\Technical\\net_angular_technical_test\\backend\\Service.Categories.Api\\Service.Categories.Api.csproj",
+        "packagesPath": "C:\\Users\\Development Sénior\\.nuget\\packages\\",
+        "outputPath": "D:\\Workspace\\Personal\\Projects\\Technical\\net_angular_technical_test\\backend\\Service.Categories.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Development\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Development Sénior\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -93,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
