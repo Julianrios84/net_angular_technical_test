@@ -11,6 +11,8 @@ RUN npm install
 RUN npm run build:${ENVIRONMENT}
 RUN mv /app/dist/${ENVIRONMENT}/* /app/dist/
 
+COPY ./proxy.conf.json /app/dist/
+
 # Serve app, based on Nginx, to have only the compiled app ready for production with Nginx
 FROM nginx:1.13.8-alpine
 

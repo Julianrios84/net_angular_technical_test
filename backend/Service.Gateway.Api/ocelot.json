@@ -8,14 +8,12 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          //"Port": 8502
           "Host": "technical.test.security.api.development",
           "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/user",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamHttpMethod": [ "OPTIONS", "GET" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -26,43 +24,37 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          //"Port": 8502
           "Host": "technical.test.security.api.development",
           "Port": 80
 
         }
       ],
       "UpstreamPathTemplate": "/user/register",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "OPTIONS", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/user/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          //"Port": 8502,
           "Host": "technical.test.security.api.development",
           "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/user/login",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "OPTIONS", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/category",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          //"Port": 8503
           "Host": "technical.test.categories.api.development",
           "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/category",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "OPTIONS", "GET", "POST" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -73,14 +65,12 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "localhost",
-          //"Port": 8503,
           "Host": "technical.test.categories.api.development",
           "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/category/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "UpstreamHttpMethod": [ "OPTIONS", "GET", "PUT", "DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []

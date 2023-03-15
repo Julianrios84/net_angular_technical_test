@@ -36,19 +36,14 @@ builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("CorsRule", rule =>
     {
-        rule.WithOrigins()
-            .AllowAnyHeader()
-             .AllowAnyMethod()
-             .AllowCredentials();
+        rule.AllowAnyOrigin()
+     .AllowAnyHeader()
+     .AllowAnyMethod();
     });
 });
 
 
 var app = builder.Build();
-
-
-// Cors Rule enabled
-app.UseCors("CorsRule");
 
 app.UseOcelot().Wait();
 
@@ -59,6 +54,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Cors Rule enabled
+app.UseCors("CorsRule");
 
 // Authentificaction enabled
 app.UseAuthentication();
